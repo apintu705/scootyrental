@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Home} from "./pages/Home"
 import {Login} from "./pages/Login"
 import {Register} from "./pages/Register"
-import {Car} from "./pages/Car"
+import {Scooty} from "./pages/Scooty"
 import {ToastContainer} from "react-toastify"
 import {BrowserRouter,Route,Routes} from "react-router-dom"
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
-          <Route path="/car/:id" element={<Car/>} />
+          <Route path="/scooty/:id" element={<Scooty/>} />
           <Route path="*" element={<Home/>} />
         </Routes>
       </BrowserRouter>

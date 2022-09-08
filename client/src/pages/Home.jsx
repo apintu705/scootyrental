@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Layout } from '../components/Layout'
 import {useSelector,useDispatch} from "react-redux"
-import { getallcars } from '../redux/actions/actions';
+import {  getallscooty } from '../redux/actions/actions';
 import { Loading } from '../components/Loading';
 import { Link} from 'react-router-dom';
 import {DatePicker} from "antd";
@@ -10,9 +10,9 @@ import axios from 'axios';
 
 export const Home = () => {
   const {RangePicker}=DatePicker;
-  const {cars}=useSelector((state)=>state.reducer);
+  const {scootys}=useSelector((state)=>state.reducer);
   const dispatch = useDispatch();
-  const [totalcar,settotalcar]=useState([])
+  const [totalscooty,settotalscooty]=useState([])
   const [city,setcity]=useState([])
   const [query,setQuery]=useState()
   const {loading}=useSelector((state)=>state.loading)
@@ -20,22 +20,22 @@ export const Home = () => {
   const setfilter=(e)=>{
     var temp=[]
 
-    for(var car of cars){
+    for(var scooty of scootys){
 
-          if(car.bookedTimeSlots.length === 0){
-              temp.push(car)
+          if(scooty.bookedTimeSlots.length === 0){
+              temp.push(scooty)
           }
     }
-    settotalcar(temp)
+    settotalscooty(temp)
   }
 
   useEffect(()=>{
-    dispatch(getallcars())
+    dispatch(getallscooty())
     
   },[dispatch])
   useEffect(()=>{
-    settotalcar(cars)
-  },[cars])
+    settotalscooty(scootys)
+  },[scootys])
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -47,21 +47,21 @@ export const Home = () => {
   },[])
 
   const filterResult = (catItem) => {
-    const catResult = totalcar.filter((curCat) => {
+    const catResult = totalscooty.filter((curCat) => {
         return curCat.type === catItem;
     });
-    settotalcar(catResult);
+    settotalscooty(catResult);
   }
 
-  const keys = ["type"];
+
 
   const search = () => {
     if(!query){
-      settotalcar(cars)
+      settotalscooty(scootys)
     }else{
-      let a= totalcar.filter(items=>{items.name=items.name.toLowerCase();
+      let a= totalscooty.filter(items=>{items.name=items.name.toLowerCase();
       return items.name.includes(query)});
-      settotalcar(a)
+      settotalscooty(a)
     }
     
     
@@ -71,7 +71,7 @@ export const Home = () => {
     <Layout>
       <div className="slider">
         <div className="left">
-          <h1 className="title">Masai Car Hire</h1>
+          <h1 className="title">Masai Scooty Hire</h1>
         </div>
 
         <div className="right">
@@ -83,7 +83,7 @@ export const Home = () => {
 
       <div className="content">
           <div className="content-row">
-            <h1 className="big-title">Top Cars For Rent</h1>
+            <h1 className="big-title">Scooty's For Rent</h1>
           </div>
 
           <div className="content-flex">
@@ -105,7 +105,7 @@ export const Home = () => {
               <div className="div-filter">
                 <h2 className="car-subtitle">****Filter by Type****</h2>
                 <div className="filter-btns">
-                  <button onClick={() => settotalcar(cars)} className="btn-type">All</button>
+                  <button onClick={() => settotalscooty(scootys)} className="btn-type">All</button>
                   {city.map((cat) => (
                       <button key={cat._id} onClick={() => filterResult(cat.type) } className="btn-type">{cat.type}</button>
                   ))}
@@ -115,18 +115,18 @@ export const Home = () => {
           <div className="content-row flex-2">
             {loading?<Loading/>:(
               <div className="content-groups">
-                {totalcar.map((car)=>(
-                  <div className="card" key={car._id}>
+                {totalscooty && totalscooty.map((scooty)=>(
+                  <div className="card" key={scooty._id}>
                     <div className="card-body">
-                      <img src={car.image} className="img-cars" alt="car" />
+                      <img src={scooty.image} className="img-cars" alt="car" />
                     </div>
                     <div className="card-footer">
                       <div className="card-footer-top">
-                        <h3 className="car-title">{car.name}</h3>
-                        <p className="per-day">Per Dar: ${(car.payPerDay).toFixed(2)} </p>
+                        <h3 className="car-title">{scooty.name}</h3>
+                        <p className="per-day">Per Dar: ${(scooty.payPerDay).toFixed(2)} </p>
                       </div>
                       <div className="card-footer-bottom">
-                        <button className="rent-now"><Link className="rent-link" to={`/car/${car._id}`}>Rent Now</Link></button>
+                        <button className="rent-now"><Link className="rent-link" to={`/scooty/${scooty._id}`}>Rent Now</Link></button>
                       </div>
                       
                     </div>

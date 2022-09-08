@@ -1,5 +1,5 @@
 const data = {
-    cars: [
+    scootys: [
         {
             name: "Peugeot 308",
             type: "Peugeot",
@@ -68,13 +68,13 @@ const data = {
 
     category: [
         {
-            type: "Peugeot",
+            type: "delhi",
         },
         {
-            type: "Citroen",
+            type: "pune",
         },
         {
-            type: "Hyundai",
+            type: "patna",
         },
     ]
 }

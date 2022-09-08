@@ -1,14 +1,14 @@
 const initialdata={
-    cars:[]
+    scootys:[]
 }
 
 export const reducer=(state=initialdata,action)=>{
     switch(action.type){
 
-        case "GET_ALL_CARS":
+        case "GET_ALL_SCOOTY":
             return{
                 ...state,
-                cars:action.payload
+                scootys:action.payload
             }
 
         default:

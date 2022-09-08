@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const rentSchema = new mongoose.Schema({
 
-    car : {type : mongoose.Schema.Types.ObjectID , ref:'cars'},
+    scooty : {type : mongoose.Schema.Types.ObjectID , ref:'scooty'},
     user : {type : mongoose.Schema.Types.ObjectID , ref:'users'},
     bookedTimeSlots : {
         from : {type : String} ,

@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from "dotenv";
-import carrouter from './routes/carsroutes.js';
+import scootyrouter from "./routes/scootyroutes.js"
 import userrouter from "./routes/userroutes.js"
 import rentrouter from "./routes/rentroutes.js"
 import cityrouter from "./routes/cityroutes.js"
@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
-app.use("/api/cars",carrouter)
+app.use("/api/scootys",scootyrouter)
 app.use("/api/user",userrouter)
 app.use("/api/rent",rentrouter)
 app.use("/api/citys",cityrouter)

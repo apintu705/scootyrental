@@ -16,7 +16,7 @@ export const Layout = (props) => {
     <>
         <div className="header">
             <div className="col">
-                <a href="/" className="logo">Rent-A-Car</a>
+                <a href="/" className="logo">Rent-A-Scooty-For-Assignment</a>
             </div>
             <div className="col">
                 <span className='name'>{userinfo&&userinfo.username}</span>

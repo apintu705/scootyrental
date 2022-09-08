@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const carSchema =new mongoose.Schema({
+const scootySchema =new mongoose.Schema({
     name:{type:String, required:true}, 
     type:{type:String, required:true},
     image:{type:String, required:true}, 
@@ -14,4 +14,4 @@ const carSchema =new mongoose.Schema({
     timestamps:true
 })
 
-export const Car=mongoose.model('cars',carSchema);
+export const Scooty=mongoose.model('scooty',scootySchema);

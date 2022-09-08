@@ -3,6 +3,6 @@ import { rentcard } from '../controllers/rentcontroller.js';
 
 const rentrouter=express.Router();
 
-rentrouter.post("/rentcar",rentcard)
+rentrouter.post("/rentscooty",rentcard)
 
 export default rentrouter

@@ -1,4 +1,4 @@
- import {Car} from "../models/carmodel.js"
+ import {Scooty} from "../models/scootymodel.js"
  import {Rent} from "../models/rentmodel.js"
 
 export const rentcard =async(req, res, next) => {
@@ -7,9 +7,9 @@ export const rentcard =async(req, res, next) => {
         const newRent = new Rent(req.body);
         await newRent.save();
 
-        const car = await Car.findById({_id: req.body.car});
-        car.bookedTimeSlots.push(req.body.bookedTimeSlots);
-        await car.save();
+        const scooty = await Scooty.findById({_id: req.body.scooty});
+        scooty.bookedTimeSlots.push(req.body.bookedTimeSlots);
+        await scooty.save();
         
         res.send('Your Rent is Successfull!')
 

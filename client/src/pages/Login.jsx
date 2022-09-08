@@ -22,7 +22,7 @@ export const Login = () => {
     dispatch({type:"ERROR",payload:false})
     try{
         let {data}=await axios.post("http://localhost:8080/api/user/login",formdata)
-        console.log(data)
+ 
         localStorage.setItem("User",JSON.stringify(data))
         toast.success("Login successfull !")
         dispatch({type:"LOADING",payload:false})
