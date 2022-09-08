@@ -90,22 +90,22 @@ export const Home = () => {
             <div className="content-row flex-1">
 
               <div className="div-filter">
-                <h2 className="car-subtitle">****Filter by Search****</h2>
+                <h2 className="scooty-subtitle">****Search by scooty name****</h2>
                 <input type="search" placeholder='Search...'onKeyPress={(e)=>{if(e.key==="Enter"){
                   search()
                 }}} onChange={(e) => setQuery(e.target.value)} className='search' />
               </div>
 
               <div className="div-filter">
-              <div className="car-subtitle">****Filter For Availability****</div>
+              <div className="scooty-subtitle">****Filter For Availability****</div>
               
               <RangePicker showTime={{format: "HH:mm"}} format="YYYY-MM-DD HH:mm:ss" onChange={(e)=>setfilter(e)} />
               </div>
 
               <div className="div-filter">
-                <h2 className="car-subtitle">****Filter by Type****</h2>
+                <h2 className="scooty-subtitle">****Select your City you want a ride****</h2>
                 <div className="filter-btns">
-                  <button onClick={() => settotalscooty(scootys)} className="btn-type">All</button>
+                  <button onClick={() => settotalscooty(scootys)} className="btn-type">All India</button>
                   {city.map((cat) => (
                       <button key={cat._id} onClick={() => filterResult(cat.type) } className="btn-type">{cat.type}</button>
                   ))}
@@ -118,7 +118,7 @@ export const Home = () => {
                 {totalscooty && totalscooty.map((scooty)=>(
                   <div className="card" key={scooty._id}>
                     <div className="card-body">
-                      <img src={scooty.image} className="img-cars" alt="car" />
+                      <img src={scooty.image} className="img-cars" alt="scooty" />
                     </div>
                     <div className="card-footer">
                       <div className="card-footer-top">

@@ -67,29 +67,28 @@ export const Scooty = () => {
       }
     }
     dispatch(rentcat(rentobj))
-    window.reload();
     navigate("/")
   }
 
   return (
     <Layout>
-      <div className="car-container">
-        <h3 className="car-rentTitle">Rent a Scooty</h3>
-        <div className="car-row">
-          <div className="car-col">
-            <div className="car-groups">
-              <div className="car-group">
-                <h2 className="car-subtitle">****Scooty Info****</h2>
-                <div className="car-info">
-                  <span>{scooty.name}</span>
+      <div className="scooty-container">
+        <h3 className="scooty-rentTitle">Rent a Scooty</h3>
+        <div className="scooty-row">
+          <div className="scooty-col">
+            <div className="scooty-groups">
+              <div className="scooty-group">
+                <h2 className="scooty-subtitle">****Scooty Info****</h2>
+                <div className="scooty-info">
+                  <span>{scooty && scooty.name.toUpperCase()}</span>
                   <span>${(scooty.payPerDay)?.toFixed(2)} Pay Per Day</span>
                   <span>Fuel Type: {scooty.fuelType}</span>
-                  <span>Max Persons: {scooty.capacity}</span>
+                  
                 </div>
               </div>
-              <div className="car-group">
-                <h2 className="car-subtitle">****Rent A scooty****</h2>
-                <div className="car-info">
+              <div className="scooty-group">
+                <h2 className="scooty-subtitle">****Rent A scooty****</h2>
+                <div className="scooty-info">
                   <RangePicker showTime={{format: "HH:mm"}} format="YYYY-MM-DD HH:mm:ss" onChange={(e)=>selectTime(e)} />
                   {from && to && (
                     <>
@@ -116,9 +115,9 @@ export const Scooty = () => {
               </div>
             </div>
           </div>
-          <div className="car-col">
-            <div className="car-image">
-              <img src={scooty.image} className="car-img" alt={scooty.name} />
+          <div className="scooty-col">
+            <div className="scooty-image">
+              <img src={scooty.image} className="scooty-img" alt={scooty.name} />
             </div>
           </div>
         </div>

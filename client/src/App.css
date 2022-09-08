@@ -118,7 +118,7 @@
     filter: drop-shadow(0 0 13px #111111);
 }
 
-.car-title {
+.scooty-title {
     margin-bottom: 5px;
     text-transform: uppercase;
     font-weight: bold;
@@ -238,53 +238,53 @@
     text-decoration: underline;
 }
 
-.car-rentTitle {
+.scooty-rentTitle {
     text-align: center;
     margin: 100px 0 100px 0;
     font-size: 40px;
 }
 
-.car-row {
+.scooty-row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.car-col {
+.scooty-col {
     flex: 1;
     margin-bottom: 100px;
 }
 
-.car-group {
+.scooty-group {
     margin-bottom: 25px;
 }
 
-.car-subtitle {
+.scooty-subtitle {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 20px;
     color: #afafaf;
 }
 
-.car-info {
+.scooty-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.car-info span {
+.scooty-info span {
     margin-bottom: 5px;
     font-size: 40px;
 }
 
-.car-image {
+.scooty-image {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.car-img {
+.scooty-img {
     width: 600px;
     height: auto;
     filter: drop-shadow(0 0 5px #111111);

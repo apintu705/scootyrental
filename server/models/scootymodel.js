@@ -7,7 +7,6 @@ const scootySchema =new mongoose.Schema({
     payPerDay:{type:Number, required:true}, 
     fuelType:{type:String, required:true},
     bookedTimeSlots:[{from:{type:String, required:true}, to:{type:String, required:true}}],
-    capacity:{type:Number, required:true},
 
 },{
     versionKey:false,
